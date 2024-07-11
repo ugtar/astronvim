@@ -1,4 +1,3 @@
-
 -- AstroCore provides a central place to modify mappings, vim options, autocommands, and more!
 -- Configuration documentation can be found with `:h astrocore`
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
@@ -81,6 +80,9 @@ return {
 
         -- setting a mapping to false will disable it
         -- ["<C-S>"] = false,
+        ["<c-j>"] = {"<c-w>j<c-w>_"},
+        ["<c-k>"] = {"<c-w>k<c-w>_"},
+        ["<c-_>"] = {"<c-w>_"},
       },
     },
   },
