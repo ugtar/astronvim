@@ -91,6 +91,9 @@ return {
             return client.supports_method "textDocument/semanticTokens/full" and vim.lsp.semantic_tokens ~= nil
           end,
         },
+        ["<c-j>"] = {"<c-w>j<c-w>_"},
+        ["<c-k>"] = {"<c-w>k<c-w>_"},
+        ["<c-_>"] = {"<c-w>_"},
       },
     },
     -- A custom `on_attach` function to be run after the default `on_attach` function
