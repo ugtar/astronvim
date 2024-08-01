@@ -35,6 +35,21 @@ return {
         [".*/etc/foo/.*"] = "fooscript",
       },
     },
+    -- hlsearch fixes
+    on_keys = {
+      auto_hlsearch = {
+        function(char)
+          if vim.fn.mode() == "n" then
+            local key = vim.fn.keytrans(char)
+            if key == "n" then
+              vim.opt.hlsearch = true -- Re-enable hlsearch when 'n' is pressed
+            elseif key == "<Esc>" then
+              vim.cmd ":noh" -- Disable hlsearch when 'Esc' is pressed
+            end
+          end
+        end,
+      },
+    },
     -- vim options can be configured here
     options = {
       opt = { -- vim.opt.<key>
@@ -46,6 +61,7 @@ return {
         winminheight = 0,
         clipboard = "unnamed",
         showtabline = 0,
+        ignorecase = false,
       },
       g = { -- vim.g.<key>
         -- configure global vim variables (vim.g)
