@@ -11,4 +11,12 @@ return {
   --   name = "gitgutter",
   --   opts = {},
   -- },
+  {
+    "smbl64/vim-black-macchiato",
+    name = "vim-black-macchiato",
+    opts = {},
+    config = function(plugin, opts)
+    end,
+  },
+
 }
